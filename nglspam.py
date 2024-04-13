@@ -25,15 +25,15 @@ def do_request():
       response = requests.post(url, data=data).text
       print("<Message sent> ", )
     
-threads = []
-
-for i in range(50):
-   t = threading.Thread(target = do_request)
-   t.daemon = True
-   threads.append(t)
-
-for i in range(50):
-   threads[i].start()
-
-for i in range(50):
-   threads[i].join()
+if __name__ == '__main__':
+	threads = []
+	for i in range(50):
+	   t = threading.Thread(target = do_request)
+	   t.daemon = True
+	   threads.append(t)
+	   
+	for i in range(50):
+	   	threads[i].start()
+	   	
+	for i in range(50):
+	 	threads[i].join()
