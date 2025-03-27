@@ -10,12 +10,11 @@ except ModuleNotFoundError:
 
 # global counter (race condition prone!)
 COUNTER: int = 0
-URL: str = "https://ngl.link/api/submit"
 exit_flag = False
 
 def post_requests(user: str, text: str) -> None:
     global COUNTER
-    url: str = URL
+    url: str = "https://ngl.link/api/submit"
     
     data: dict[str, str] = {
         'username': user,
